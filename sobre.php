@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="br">
+
+  <head>
+    <meta charset="utf-8">
+    <title>CSI Engenharia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="assets/imagem/logo-csi/favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,500" rel="stylesheet">
+    <link href="assets/css/socicon.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/entypo.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      
+    <script>
+      $(function () {
+        $('form').bind('submit', function () {
+          $.ajax({
+            type: 'post',
+            url: 'processaemail-1.php',
+            data: $('form').serialize(),
+            success: function () {
+              alert('Agradeçemos o contato, entraremos em contato o mais breve possivel');
+            }
+          });
+          return false;
+        });
+      });
+    </script>
+
+<script type="text/javascript">
+    /* Máscaras ER */
+    function mascara(o,f){
+        v_obj=o
+        v_fun=f
+        setTimeout("execmascara()",1)
+    }
+    function execmascara(){
+        v_obj.value=v_fun(v_obj.value)
+    }
+    function mtel(v){
+        v=v.replace(/D/g,"");             //Remove tudo o que não é dígito
+        v=v.replace(/^(d{2})(d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+        v=v.replace(/(d)(d{4})$/,"$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
+        return v;
+    }
+    function id( el ){
+      return document.getElementById( el );
+    }
+    window.onload = function(){
+      id('telefone').onkeypress = function(){
+        mascara( this, mtel );
+      }
+    }
+    </script>
+
+
+    <style>
+    
+        .bg-light-ta {
+          background-color: hsla(120, 11%, 95%, 0.87) !important;
+        }
+
+        .bg-light-card {
+          background-color:rgb(183, 226, 247);
+                  }
+        
+          .bg-dark-ta {
+        background-color: transparent;
+        }
+
+        .rounded-pill-ta {
+          border-radius: 50rem !important;
+
+        }
+
+        </style>
+
+  </head>
+
+  <body>
+<!--  Facebook  -->
+<div id="fb-root"></div>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v5.0'
+          });
+        };
+
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/pt_BR/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <div class="fb-customerchat"
+        attribution=setup_tool
+        page_id="1297892690280527"
+  logged_in_greeting="Oi, seja muito bem vindo(a) a CSI Engenharia. Como posso ajudar?"
+  logged_out_greeting="Oi, seja muito bem vindo(a) a CSI Engenharia. Como posso ajudar?">
+      </div>
+
+
+<!--Inicio NavBar-->
+    
+<div class="navbar-container">
+    <div class="position-absolute navbar-dark bg-dark-ta" data-sticky="top">
+     <div class="container">
+       <nav class="row navbar navbar-expand-lg align-items-center">
+         <div class="col-12 col-lg-auto order-lg-2 d-flex justify-content-between">
+           <a class="navbar-brand m-0" href="index.php">
+            <img alt="Image" src="assets/imagem/logo-csi/CSIEngenhariaChapada-m-0.png" height="80px" />
+          </a>
+           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-toggle" aria-expanded="false" aria-label="Toggle navigation">
+             <i class="icon-menu h4"></i>
+           </button>
+         </div>
+
+         <div class="col-12 col-lg order-lg-3">
+           <div class="collapse navbar-collapse navbar-toggle ">
+             <ul class="navbar-nav">
+               <li class="nav-item">
+                 <a href="index.php" class="nav-link font-weight-bold text-light " >Inicio</a>
+               </li>
+               <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle text-light" href="#" id="pagesDropdown" role="button" data-toggle="dropdown">Institucional</a>
+                 <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+
+                   <a class="dropdown-item " href="sobre.php">
+                     <span class="h6 mb-0">Quem somos</span>
+                   </a>
+
+                   <div class="dropdown-divider"></div>
+
+                   <a class="dropdown-item" href="sobre.php#ref_consientizacao_ambiental_quem_somos">
+                     <span class="h6 mb-0">Compromisso ambiental</span>
+                     </a>
+
+                
+                </div>
+               </li>
+               <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle text-light" href="#" id="componentsDropdown" role="button" data-toggle="dropdown">Produtos</a>
+                 <div class="dropdown-menu" aria-labelledby="componentsDropdown">
+
+                  <a class="dropdown-item" href="produtos.php">Produtos e especializações</a>
+      
+                  <a class="dropdown-item" href="produtos.php">Cases de sucesso</a>
+      
+                 </div>
+               </li>
+              
+                  <div class="btn-group ex" data-toggle="buttons" style="vertical-align:middle">
+                    
+                      <a class="btn btn-outline-success rounded-pill-ta" href="" data-toggle="modal" data-target="#formcontato" >Solicitar contato</a>
+                    </div>
+             </ul>
+            </ul>
+            
+           </div>
+         </div>
+        
+         <div class="col-12 col-lg order-lg-3">
+           <div class="collapse navbar-collapse navbar-toggle justify-content-end">
+
+         </div>
+         </div>
+        
+       </nav>
+     
+     </div>
+     
+   </div>
+ </div>
+
+    <!--fim da Navbar-->
+    <div class="main-container">
+      <section class="bg-dark text-white space-xlg jarallax" data-jarallax data-speed="0.2">
+        <img alt="Image" src="assets/imagem/glass-tree-1920.jpg" class="bg-image opacity-40 jarallax-img" />
+        <div class="container">
+          <div class="row text-center justify-content-center section-intro">
+            <div class="col-12 col-md-8 col-lg-8" >
+              <h1 class="display-5">Quem é a</h1><h1 class="display-4">CSI Engenharia.</h1>
+              <span class="lead">Empresa Brasileira, especializada no desenvolvimento de
+                Projetos de melhorias que visam aumento de produtividade e
+                diminuição de custos operacionais.<br><br> Com foco em
+                transformação de um mundo melhor e consciente, trazemos
+                para cada cliente um pouco do nosso conhecimento onde
+                cada um pode fazer a sua parte de forma justa, sustentável,
+                renovável e limpa</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="row justify-content-center text-center section-intro">
+            <div class="col-12 col-md-9 col-lg-8">
+              <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">Nossos Princípios </h2>
+              <span class="lead" data-aos="fade-up" data-aos-delay="200">Conheça um pouco mais sobre nós</span>
+
+            </div>
+          </div>
+
+   
+          <ul class="row feature-list feature-list-sm">
+              <li class="col-12 col-md-4">
+                <div class="shadow-sm p-3 mb-5 bg-white rounded">
+              <div class="card bg-light-ta ">
+                    <div class="card-header"><h5><font color="red"><strong>Missão</strong></font></h5></div>
+                    <div class="card-body">
+                    <p>
+                      ➢ Desenvolver e executar Projetos de melhoria com
+                      foco em resultados atendendo às expectativas do
+                      cliente  
+                    </p>
+                  </div>
+                </div>
+              </div>
+              </li>
+                  <li class="col-12 col-md-4">
+                      <div class="shadow-sm p-3 mb-5 bg-white rounded">
+                 <div class="card bg-light-ta ">
+                    <div class="card-header">   <h5><font color="red"><strong>Visão</font></strong></h5></div>
+                      <div class="card-body">
+                      <p>
+                          ➢ Ser reconhecida dentre as melhores empresas de
+                          desenvolvimento de projetos de melhoria no Estado de
+                          Mato Grosso. 
+                    </p>
+                  </div>
+                  </div>
+                  </div>
+                </li>
+                  <li class="col-12 col-md-4">
+                      <div class="shadow-sm p-3 mb-5 bg-white rounded">
+                  <div class="card bg-light-ta ">
+                      <div class="card-header"> <h5><font color="red"><strong>Valores</strong></font></h5></div>
+                      <div class="card-body">
+                      <p>
+                      ➢ Comprometimento com o objetivo do cliente<br>
+                      ➢ Entrega de Solução ao problema do cliente<br>
+                      ➢ Ética empresarial<br>
+                      ➢ Transparência<br>
+                      ➢ Ser justo
+                    </p>
+                  </div>
+                </div>
+                      </div>
+                  </li> 
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+
+      <section class="bg-light-ta space-short">
+        <div class="container"  >
+          <div class="row justify-content-center text-center section-intro">
+            <div class="col-12 col-md-9 col-lg-8">
+              <span class="title-decorative" data-aos="fade-up" data-aos-delay="10">O futuro do planeta</span>
+              <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">Cuide do planeta azul você tambêm</h2>
+              <span class="lead" data-aos="fade-up" data-aos-delay="200">A CSI Engenharia, está preocupada com o meio ambiente assim como você</span>
+
+            </div>
+          </div>
+
+          <ul class="feature-list feature-list-lg">
+            <li class="row justify-content-around align-items-center">
+              <div class="col-12 col-md-6 col-lg-5">
+                <img alt="Image" src="assets/imagem/drop-3065629_1920.jpg" class="img-fluid rounded" />
+              </div>
+              <div class="col-12 col-md-6 col-lg-5">
+                <h5>Tão azul, mas tão restrito</h5>
+                <p>
+                  Você sabia que a água doce corresponde a 2,5% do total de água do planeta.<br>
+                  Isso mesmo, pouco né! Então como se nao basta-se essa água está em sua maioria, em lugares de dificil acesso, como as geleiras nos Articos
+                </p>
+                <a href="#">Saiba mais &rsaquo;</a>
+              </div>
+            </li>
+            <li class="row justify-content-around align-items-center">
+              <div class="col-12 col-md-6 col-lg-5">
+                <img alt="Image" src="assets/imagem/earth-1839348_1280.jpg" class="img-fluid rounded" />
+              </div>
+              <div class="col-12 col-md-6 col-lg-5">
+                <h5>Aquecimento global</h5>
+                <p>
+                    Constantemente o aquecimento global oriundo da emissâo de gases 
+                  do carros e principalmente das usinas termoeletricas vem afetando a forma como vivemos, diminuindo nossos recursos.
+                  
+                  O Aquecimento global e a falta de água. ... 
+                    Isso acontece porque o aumento da temperatura afeta diretamento o ciclo da água, 
+                    aumentando a evaporação, alterando a umidade do solo, o escoamento e também o regime de chuvas e,
+                     consequentemente, altera a disponibilidade da água para consumo humano
+              
+                </p>
+                <a href="#">Saiba mais &rsaquo;</a>
+              </div>
+            </li>
+            <li class="row justify-content-around align-items-center">
+              <div class="col-12 col-md-6 col-lg-5">
+                <img alt="Image" src="assets/imagem/environmental-protection-4366503_1920.jpg" class="img-fluid rounded" />
+              </div>
+              <div class="col-12 col-md-6 col-lg-5">
+                <h5>Energia limpa é o novo Lucro</h5>
+                <p>
+                  Investir em energia limpa é cuidar do meio ambiente, é emitir menos carbono na atmosfera, colaborando com 
+                  a fauna e a flora do planeta. <br>
+                  Os painéis solares com células voltaicas, cujo principal componente é o silício, 
+                  captam a energia do sol, que pode ser usada em residências para aquecer a água e ambientes,
+                   além de, indiretamente, produzir energia elétrica.</p>
+                <a href="#">Saiba mais &rsaquo;</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+     
+      <section class="bg-white fullwidth-split">
+        <div class="container-fluid">
+          <div class="row no-gutters">
+            <div class="col-12 col-sm-5 col-lg-6 order-sm-2 fullwidth-split-image d-sm-flex align-items-center">
+              <img alt="Image" src="assets/imagem/idea-1880978_1920.jpg" class="bg-image" />
+            </div>
+            <div class="col-12 col-sm-7 col-lg-6 order-sm-1 fullwidth-split-text">
+              <div class="col-12 col-sm-8">
+                 <h3 class="display-4">Que tal saber como ajudar o planeta?</h3>
+                <span class="lead">
+                  Nossos produtos tem como proposito, Salvar o planeta e gerar beneficios ao cliente.
+                </span>
+                <a href="produtos.php" class="btn btn-outline-success btn-lg rounded-pill-ta ">Salvar o planeta</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer-short">
+          <div class="container">
+            <hr>
+            <nav class="row justify-content-between align-items-center">
+              <div class="col-auto">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a href="#">
+                      <img alt="Image" src="assets/imagem/logo-csi/CSIEngenhariaChapada.png" height="60px" />
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://www.google.com.br/maps/place/CSI+Engenharia+e+Energia+Solar/@-15.6720278,-56.1295039,17z/data=!3m1!4b1!4m5!3m4!1s0x939dac322e42fb59:0x79ff9df19393e471!8m2!3d-15.672033!4d-56.1273152" target="_blank" >
+                      Rua Benedito Curvo, Nº07, Varzea Grande/MT
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#">(65) 98124-0872 / (65) 98475-0882 </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#">csi@csiengenharia.com</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-auto text-sm-right">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a href="https://www.instagram.com/csiengenharia/" target="_blank" ><i class="socicon-instagram"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="https://www.facebook.com/CSIEngenharias/" target="_blank" ><i class="socicon-facebook"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <div class="row">
+              <div class="col">
+                <small>&copy; 2019 Todos os direitos reservados, produzido por <a href="https://www.moveuptecnologia.com.br/" target="_blank">MoveUp Tecnologia</a></small>
+              </div>
+            </div>
+          </div>
+        </footer>
+    </div>
+
+<!--Modal de contato-->
+
+<div class="modal fade" id="formcontato" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Formulário  de contato</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" id="ajax_form_contato" action="http://localhost/csiOnline/processaemail-1.php">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Nome:</label>
+            <input type="text" name="nome" class="form-control" id="nomecontato" required="required">
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+            <label for="recipient-name" class="col-form-label">Celular:</label>
+            <input type="text" name="telefone" class="form-control" id="telefone" required="required">
+          </div>
+          <div class="col">
+            <label for="recipient-name" class="col-form-label">CEP:</label>
+            <input type="text" name="cep" class="form-control" id="recipient-name" required="required">
+          </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">E-mail:</label>
+            <input type="text" name="email" class="form-control" id="recipient-name" required="required">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Conta de energia:</label>
+            <input type="file" name="anexo" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Mensagem:</label>
+            <br>
+            <textarea name="mensagem-corpo" class="form-group" cols="48" rows="5" placeholder="Digite sua mensagem aqui..."></textarea>
+           </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="submit" class="btn btn-success" id="solicitarcontato" >Solicitar Orçamento</button>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+<!--Fim do modal de contato-->
+
+
+
+
+    <!-- Required vendor scripts (Do not remove) -->
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+
+    <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
+
+    <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
+    <script type="text/javascript" src="assets/js/aos.js"></script>
+    <!-- Flatpickr (calendar/date/time picker UI) -->
+    <script type="text/javascript" src="assets/js/flatpickr.min.js"></script>
+    <!-- Flickity (handles touch enabled carousels and sliders) -->
+    <script type="text/javascript" src="assets/js/flickity.pkgd.min.js"></script>
+    <!-- jarallax (parallax effect and video backgrounds) -->
+    <script type="text/javascript" src="assets/js/jarallax.min.js"></script>
+    <script type="text/javascript" src="assets/js/jarallax-video.min.js"></script>
+    <script type="text/javascript" src="assets/js/jarallax-element.min.js"></script>
+    <!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
+    <script type="text/javascript" src="assets/js/scrollMonitor.js"></script>
+    <!-- jQuery smartWizard facilitates steppable wizard content -->
+    <script type="text/javascript" src="assets/js/jquery.smartWizard.min.js"></script>
+    <!-- Smooth scroll (animation to links in-page)-->
+    <script type="text/javascript" src="assets/js/smooth-scroll.polyfills.min.js"></script>
+    <!-- Prism (displays formatted code boxes) -->
+    <script type="text/javascript" src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/zoom.min.js"></script>
+
+    <!-- Required theme scripts (Do not remove) -->
+    <script type="text/javascript" src="assets/js/theme.js"></script>
+
+    <script>
+
+      $("#btn-contato-footer").click(function(){
+          $("#formcontato").modal();
+      });
+    </script>
+
+<script>
+
+    $('#email').keyup(function() {
+
+  if( $(this).val().length > 0 ) {
+
+  $('#solicitarcontato').attr('disabled', false);
+
+  } else {
+
+  $('#solicitarcontato').attr('disabled', true);
+
+  }
+
+  });
+
+</script>
+
+<script> 
+  $('#ajax_form_contato').submit(function() {
+
+// submission stuff
+
+$('#formcontato').modal('hide');
+return false;
+});
+</script> 
+     
+
+</body>
+
+</html>
+
+
+  </body>
+
+</html>
+
+
+          
+
